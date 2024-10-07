@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leona García - Asesora de Comunicación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #00BFFF; /* Color Telmex */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #FF6347; /* Color Izzi */
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #008000; /* Color Totalplay */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="tel"], input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #00BFFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Leona García</h1>
+    <h2>Asesora de Comunicación</h2>
+</header>
+
+<nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#paquetes-internet">Paquetes de Internet</a>
+    <a href="#formulario">Registro de Clientes</a>
+</nav>
+
+<section id="sobre-mi">
+    <h3>Sobre mí</h3>
+    <p>Soy Leona García, asesora de comunicación con experiencia en telecomunicaciones. Mi enfoque es ayudar a empresas como Telmex, Telcel, Izzi y Totalplay a optimizar su comunicación y conectar mejor con sus clientes.</p>
+</section>
+
+<section id="formulario">
+    <h3>Registro de Clientes</h3>
+    <form id="clientForm" onsubmit="enviarWhatsApp(event)">
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="direccion">Dirección Completa:</label>
+        <input type="text" id="direccion" name="direccion" placeholder="Ejemplo: Calle, Número, Colonia, CP, Municipio, Estado" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+
+        <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+
+        <input type="submit" value="Enviar Datos">
+    </form>
+</section>
+
+<section id="contacto">
+    <h3>Contacto</h3>
+    <p>Si deseas ponerte en contacto conmigo, puedes escribirme a: <a href="mailto:arsusa1989@gmail.com">arsusa1989@gmail.com</a></p>
+    <p>Visita mi página en <a href="https://www.facebook.com/leona.823988?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></p>
+    <p>Envíame un mensaje por <a href="https://wa.me/5218683898471" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Leona García</p>
+
+<script>
+    function enviarWhatsApp(event) {
+        event.preventDefault();
+        
+        // Obtener los datos del formulario
+        var nombre = document.getElementById("nombre").value;
+        var direccion = document.getElementById("direccion").value;
+        var telefono = document.getElementById("telefono").value;
+        var fechaNacimiento = document.getElementById("fecha-nacimiento").value;
+
+        // Formatear el mensaje para WhatsApp
+        var mensaje = "¡Hola! Soy " + nombre + ".\n" +
+                      "Mi dirección es: " + direccion + ".\n" +
+                      "Mi número de teléfono es: " + telefono + ".\n" +
+                      "Fecha de nacimiento: " + fechaNacimiento + ".";
+
+        // Redirigir a WhatsApp con el mensaje
+        var url = "https://wa.me/5218683898471?text=" + encodeURIComponent(mensaje);
+        window.open(url, '_blank');
+    }
+</script>
+
+</body>
+</html>
